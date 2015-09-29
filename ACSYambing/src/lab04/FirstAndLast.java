@@ -1,8 +1,5 @@
-//© A+ Computer Science  -  www.apluscompsci.com
-//Name -
-//Date -
-//Class -
-//Lab  -
+package lab04;
+
 
 import static java.lang.System.*;
 
@@ -41,7 +38,7 @@ lastLetter= word.charAt(word.length()-1);
 
  	public String toString()
  	{
- 		String output="";
+ 		String output= ("word :: " + word  + "\nfirst :: " + firstLetter + "\nlast :: " + lastLetter);
 
 
 
