@@ -11,6 +11,7 @@ import static java.lang.System.*;
 public class StringRipper
 {
 	private String word;
+	private String ripped;
 	
 	public StringRipper()
 	{
@@ -19,22 +20,22 @@ word= "";
 
 	public StringRipper(String s)
 	{
-word="s";
+word= s;
 	}
 	
  public void setString(String s)
  {
-word="s";
+word=s;
  }	
 
 	public String ripString(int x, int y)
 	{
-		String ripped= word.substring(x,y);
-		return ripped;
+		ripped = word.substring(x,y);
+		return "";
 	}
 
 	public String toString()
 	{
-		return("\n\n");
+		return "\n\n" + ripped;
 	}
 }
