@@ -33,12 +33,12 @@ theChar=c;
 
 	public char getChar()
 	{
-		return '-';
+		return theChar;
 	}
 
 	public boolean isUpper( )
 	{
-if(theChar>=65||theChar<=90)
+if(theChar>=65&&theChar<=90)
 {return true;
 }
 		return false;
@@ -46,7 +46,7 @@ if(theChar>=65||theChar<=90)
 
 	public boolean isLower( )
 	{
-		if(theChar>=97||theChar<=122)
+		if(theChar>=97&&theChar<=122)
 		{return true;
 		}
 		return false;
@@ -54,25 +54,26 @@ if(theChar>=65||theChar<=90)
 	
 	public boolean isNumber( )
 	{
-		if(theChar>=48||theChar<=57)
+		if(theChar>=48&theChar<=57)
 		{return true;
 		}
-
-
 		return false;
 	}	
 
 	public int getASCII( )
 	{
-		return 0;
+		return (int)theChar;
 	}
 
 	public String toString()
 	{
-
-
-
-
+		if(isNumber() == true)
+		{return ""+getChar() + " is a number . ASCII == " + getASCII() + "\n";	  
+		}
+		if(isUpper()==true)
+			{return ""+getChar() + " is an uppercase character. ASCII == " + getASCII() + "\n";	  
+			}
 		return ""+getChar() + " is a lowercase character. ASCII == " + getASCII() + "\n";	  
-	}
+
+}
 }
