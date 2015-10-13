@@ -48,6 +48,58 @@ public class Magpie3
 		{
 			response = "Tell me more about your family.";
 		}
+		else if (findKeyword(statement, "dog") >= 0
+				|| findKeyword(statement, "cat") >= 0
+				|| findKeyword(statement, "fish") >= 0
+				|| findKeyword(statement, "rabbit") >= 0
+				|| findKeyword(statement, "chinchilla") >= 0
+				|| findKeyword(statement, "snake") >= 0
+				|| findKeyword(statement, "alpaca") >= 0
+				|| findKeyword(statement, "hamster") >= 0
+				|| findKeyword(statement, "chicken") >= 0
+				|| findKeyword(statement, "platypus") >= 0)
+		{
+			response = "Don't they poop a lot! Tell me more about your pets.";
+		}
+		else if (findKeyword(statement, "One Direction") >= 0
+				|| findKeyword(statement, "5 Seconds oF Summer") >= 0
+				|| findKeyword(statement, "Ed Sheeran") >= 0
+				|| findKeyword(statement, "Halsey") >= 0
+				|| findKeyword(statement, "The Weeknd") >= 0
+				|| findKeyword(statement, "Jason Derulo") >= 0
+				|| findKeyword(statement, "Walk the Moon") >= 0
+				|| findKeyword(statement, "Taylor Swift") >= 0
+				|| findKeyword(statement, "Bastille") >= 0
+				|| findKeyword(statement, "Echosmith") >= 0)
+		{
+			response = "SO WOKE! Tell me more about this music!";
+		}
+		else if (findKeyword(statement, "Dr. R") >= 0
+				|| findKeyword(statement, "Bfend") >= 0
+				|| findKeyword(statement, "Heather Bender") >= 0
+				|| findKeyword(statement, "Mrs. Wu") >= 0
+				|| findKeyword(statement, "Liz Erikson") >= 0
+				|| findKeyword(statement, "Mr. Albaugh") >= 0
+				|| findKeyword(statement, "Roger") >= 0
+				|| findKeyword(statement, "Momma J") >= 0
+				|| findKeyword(statement, "Jill Rustad") >= 0
+				|| findKeyword(statement, "KimmyD") >= 0)
+		{
+			response = "Aren't they an awesome teacher! Tell me more about them!";
+		}
+		else if (findKeyword(statement, "sports") >= 0
+				|| findKeyword(statement, "basketball") >= 0
+				|| findKeyword(statement, "basebal") >= 0
+				|| findKeyword(statement, "volleyball") >= 0
+				|| findKeyword(statement, "soccer") >= 0
+				|| findKeyword(statement, "hockey") >= 0
+				|| findKeyword(statement, "softball") >= 0
+				|| findKeyword(statement, "swimming") >= 0
+				|| findKeyword(statement, "golf") >= 0
+				|| findKeyword(statement, "water polo") >= 0)
+		{
+			response = "ball is life. what's new?";
+		}
 		else
 		{
 			response = getRandomResponse();

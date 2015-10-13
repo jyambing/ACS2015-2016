@@ -30,14 +30,14 @@ public class StringExplorer
 		else
 		   System.out.println("the word 'slow' is not found");
 
-String test1 = "Computer Science is the best, the greatest, and the most wonderful subject to stidy!";
+String test1 = "Computer Science is the best, the greatest, and the most wonderful subject to study!";
 	int occur=0;
-
-if(test1.indexOf("the" ) !=-1)
-{	occur++;
-test1=test1.substring(test1.indexOf("the"));
-	}
-
+if(test1.indexOf("the", 0)!=-1)
+for(int x= 0; x<test1.length()-3; x++)
+{ if(test1.substring(x, x+3).equals("the"))
+	occur++;
+}
+System.out.println("The word 'the' occurs " + occur + " times.");
 }
 }
 
