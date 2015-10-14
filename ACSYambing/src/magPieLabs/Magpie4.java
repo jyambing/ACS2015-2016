@@ -101,9 +101,17 @@ public class Magpie4
 		{
 			response = "ball is life. what's new?";
 		}
-		else if( findKeyword(statement," I want to " ))
+		else if( findKeyword(statement,"I want to" ) >= 0)
 		{
 		response= transformIWantToStatement(statement); 
+		}
+		else if( findKeyword(statement,"you" ) >= 0 && findKeyword(statement, "me")>=0)
+		{
+		response= transformYouMeStatement(statement); 
+		}
+		else if( findKeyword(statement,"I" ) >= 0 && findKeyword(statement, "you")>=0)
+		{
+		response= transformIYouStatement(statement); 
 		}
 		else
 		{
@@ -163,8 +171,23 @@ public class Magpie4
 	}
 	
 	
-
+private String transformIYouStatement(String statement)
+{ 	//  Remove the final period, if there is one
+	statement = statement.trim();
+	String lastChar = statement.substring(statement
+			.length() - 1);
+	if (lastChar.equals("."))
+	{
+		statement = statement.substring(0, statement
+				.length() - 1);
+	}
+	int psnOfYou = findKeyword (statement, "I", 0);
+	int psnOfMe = findKeyword (statement, "you", psnOfYou + 1);
 	
+	String restOfStatement = statement.substring(psnOfYou + 1, psnOfMe).trim();
+	return "omg. really?? Why do you " + restOfStatement + " me?";
+}
+
 	
 	/**
 	 * Search for one word in phrase.  The search is not case sensitive.
@@ -231,11 +254,11 @@ public class Magpie4
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 9;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
-		
+
 		if (whichResponse == 0)
 		{
 			response = "Interesting, tell me more.";
@@ -252,7 +275,26 @@ public class Magpie4
 		{
 			response = "You don't say.";
 		}
-
+		else if (whichResponse == 4)
+		{
+			response = "Wow, amazing!";
+		}
+		else if (whichResponse == 5)
+		{
+			response = "lol okay homie!!!";
+		}
+		else if (whichResponse == 6)
+		{
+			response = "ummm are you sure fam???";
+		}
+		else if (whichResponse == 7)
+		{
+			response = "that's personal... let's talk about something else";
+		}
+		else if (whichResponse == 8)
+		{
+			response = "so blessed";
+		}
 		return response;
 	}
 
