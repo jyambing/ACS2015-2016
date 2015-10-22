@@ -1,10 +1,13 @@
 package magPieLabs;
 
+import javax.sound.sampled.Clip;
+
 public class Magpie5 {
 	/**
 	 * Get a default greeting 	
 	 * @return a greeting
 	 */	
+	Sound playSound= new Sound();
 	public String getGreeting()
 	{
 		return "Hi, I'm Musical Maggie! Let's talk Music!";
@@ -28,33 +31,6 @@ public class Magpie5 {
 		{
 			response = "Why so negative? Music is always a positve";
 		}
-		else if (findKeyword(statement, "band")>=0)
-		{
-			response = "What instrument do you play?";
-		}
-		else if (findKeyword(statement, "choir")>=0)
-		{
-			response = "What voice part do you sing?";
-		}
-	
-		else if(findKeyword(statement, "pop")>=0)
-				{ response= getRandomPop();
-				}
-		else if( findKeyword(statement, "classical")>=0)
-				{ response= getRandomClassical();
-				}
-		else if(findKeyword(statement, "rap")>=0)
-		{ response= getRandomRap();
-		}
-		else if( findKeyword(statement, "country")>=0)
-		{ response= getRandomCountry();
-		}
-		else if(findKeyword(statement, "rock")>=0)
-		{ response= getRandomRock();
-		}
-		else if(findKeyword(statement, "oldies")>=0)
-		{ response= getRandomOldies();
-		}
 		else if( findKeyword(statement,"I like" ) >= 0)
 		{
 		response= transformILikeStatement(statement); 
@@ -67,13 +43,39 @@ public class Magpie5 {
 		{
 		response= transformILoveStatement(statement); 
 		}
+		
+		else if (findKeyword(statement, "band")>=0)
+		{
+			response = "What instrument do you play?";
+		}
+		else if (findKeyword(statement, "choir")>=0)
+		{
+			response = "What voice part do you sing?";
+		}
+		else if(findKeyword(statement, "pop")>=0)
+				{ response= playSound.pop();
+				}
+		else if( findKeyword(statement, "classical")>=0)
+				{ response= playSound.classical();
+				}
+		else if(findKeyword(statement, "rap")>=0)
+		{ response= playSound.rap();
+		}
+		else if( findKeyword(statement, "country")>=0)
+		{ response= playSound.country();
+		}
+		else if(findKeyword(statement, "rock")>=0)
+		{ response= playSound.rock();
+		}
+		else if(findKeyword(statement, "oldies")>=0)
+		{ response= playSound.oldies();
+		}	
 		else
 		{
 			response = getRandomResponse();
 		}
 		return response;
 	}
-
 	
 	private String transformILikeStatement(String statement)
 	{
@@ -121,156 +123,7 @@ public class Magpie5 {
 		String restOfStatement = statement.substring(psn + 7).trim();
 		return "It's awesome that you're passionate about " + restOfStatement +"!";
 	}
-	private String getRandomPop()
-	{
-		final int NUMBER_OF_RESPONSES = 4;
-		double r = Math.random();
-		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
-		String response = "";
 
-		if (whichResponse == 0)
-		{
-			response = "One Direction";
-		}
-		else if (whichResponse == 1)
-		{
-			response = "Bruno Mars";
-		}
-		else if (whichResponse == 2)
-		{
-			response = "Taylor Swift";
-		}
-		else if (whichResponse == 3)
-		{
-			response = "Jason Derulo";
-		}
-		return response;
-	}
-	private String getRandomClassical()
-	{
-		final int NUMBER_OF_RESPONSES = 4;
-		double r = Math.random();
-		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
-		String response = "";
-
-		if (whichResponse == 0)
-		{
-			response = "Yo Yo Ma";
-		}
-		else if (whichResponse == 1)
-		{
-			response = "Beethoven";
-		}
-		else if (whichResponse == 2)
-		{
-			response = "Mozart";
-		}
-		else if (whichResponse == 3)
-		{
-			response = "Bach";
-		}
-		return response;
-	}
-	private String getRandomRap()
-	{
-		final int NUMBER_OF_RESPONSES = 4;
-		double r = Math.random();
-		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
-		String response = "";
-
-		if (whichResponse == 0)
-		{
-			response = "Hoodie Allen";
-		}
-		else if (whichResponse == 1)
-		{
-			response = "Kanye West";
-		}
-		else if (whichResponse == 2)
-		{
-			response = "Drake";
-		}
-		else if (whichResponse == 3)
-		{
-			response = "Nikki Minaj";
-		}
-		return response;
-	}
-	private String getRandomCountry()
-	{
-		final int NUMBER_OF_RESPONSES = 4;
-		double r = Math.random();
-		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
-		String response = "";
-
-		if (whichResponse == 0)
-		{
-			response = "Sugarland";
-		}
-		else if (whichResponse == 1)
-		{
-			response = "Tim McGraw";
-		}
-		else if (whichResponse == 2)
-		{
-			response = "Keith Urban";
-		}
-		else if (whichResponse == 3)
-		{
-			response = "Miranda Lambert";
-		}
-		return response;
-	}
-	private String getRandomRock()
-	{
-		final int NUMBER_OF_RESPONSES = 4;
-		double r = Math.random();
-		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
-		String response = "";
-
-		if (whichResponse == 0)
-		{
-			response = "Livin' on a Prayer";
-		}
-		else if (whichResponse == 1)
-		{
-			response = "Eye of the Tiger";
-		}
-		else if (whichResponse == 2)
-		{
-			response = "Green Day";
-		}
-		else if (whichResponse == 3)
-		{
-			response = "Imagine Dragons";
-		}
-		return response;
-	}
-	private String getRandomOldies()
-	{
-		final int NUMBER_OF_RESPONSES = 4;
-		double r = Math.random();
-		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
-		String response = "";
-
-		if (whichResponse == 0)
-		{
-			response = "I Want it that Way";
-		}
-		else if (whichResponse == 1)
-		{
-			response = "Bohemian Rhapsody";
-		}
-		else if (whichResponse == 2)
-		{
-			response = "Woudn't it be Nice";
-		}
-		else if (whichResponse == 3)
-		{
-			response = "Oh, What a night";
-		}
-		return response;
-	}
 
 	
 	/**
