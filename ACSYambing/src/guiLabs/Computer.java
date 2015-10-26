@@ -10,7 +10,7 @@ public class Computer
  
 	public Computer()
 	{
-		choice.randomSetChoice();
+		randomSetChoice();
 		//call random set Choice	
 	}
 	
@@ -22,14 +22,20 @@ public class Computer
 	public void randomSetChoice()
 	{
 		int c= (int) Math.random()*3;
+		switch(c) {
 		//use Math.random()
-		if(c==1)
+		case 0:
 			choice= "paper";
-		else if (c==2)
+		break;
+		case 1: 
 			choice="scissors";
-		else 
+		break;
+		case 2:
 			choice= "rock";
+			break;
+		}
 		//use switch case
+		
 	}	
 		
 	/*
@@ -41,8 +47,10 @@ public class Computer
 	public int didIWin(Player p)
 	{if(p.getChoice().equals(this.getChoice()))
 		return 0;
-	else if()
-		return -1;		
+	else if(p.getChoice().equals("paper")&&this.getChoice().equals("scissors")||p.getChoice().equals("scissors")&&this.getChoice().equals("rock")||p.getChoice().equals("rock")&&this.getChoice().equals("paper"))
+		return 1;	
+	else 
+		return -1;
 	}
 	
 	public String toString()
