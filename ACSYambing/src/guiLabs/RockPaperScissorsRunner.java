@@ -58,7 +58,7 @@ public class RockPaperScissorsRunner extends JFrame implements ActionListener
 
 		//instantiate a new JTextArea
 		text = new JTextArea();
-		text.setText("WELCOME TO ROCK-PAPER-SCISSORS!!!\n\n");
+		text.setText("WELCOME TO ROCK-PAPER-SCISSORS!!!\n\n Please Choose your Weapon!!!");
 
 		//instantiate a new JButton and refer rock to it
 		rock = new JButton("Rock");
@@ -66,14 +66,19 @@ public class RockPaperScissorsRunner extends JFrame implements ActionListener
 		rock.setActionCommand("rock");
 
 		//instantiate a new JButton and refer paper to it
-
+		paper = new JButton("Paper");
+		paper.addActionListener(this);
+		paper.setActionCommand("paper");
 
 		//instantiate a new JButton and refer scissors to it
-
+		scissors = new JButton("Scissors");
+		scissors.addActionListener(this);
+		scissors.setActionCommand("scissors");
 
 		//add all three buttons to the bottom panel
 		bot.add(rock);
-
+		bot.add(paper);
+		bot.add(scissors);
 
 
 		//add the text to the top panel
@@ -81,6 +86,7 @@ public class RockPaperScissorsRunner extends JFrame implements ActionListener
 
 		//add both panels to the main panel
 		main.add(top);
+		main.add(bot);
 
 
 		//add the main panel to the frame
@@ -95,31 +101,39 @@ public class RockPaperScissorsRunner extends JFrame implements ActionListener
   {
   	//instantiate a new Computer and refer pooter to it
   	pooter = new Computer();
+  	pooter.randomSetChoice();
 
   	//get the String value from the button pressed
 		player.setChoice(e.getActionCommand());
 
 		//set screenText to the toString() value of each player reference
-		String screenText = "";
+		String screenText = "Pooter: " + pooter + "\n"+player;
 
 		//call the Computer's didIWin(Player p) method to find the winner
 		//you must pass in the Player as a parameter to the method
-		int result = 0;
+		int result = pooter.didIWin(player);
 
 		//if the result is 0 - draw
-		if(result == 0)
+		if(result == 0){
 			screenText = screenText + "\n" + "DRAW!";
+		}
 		//if the result is 1 - pooter wins
 
-
+		if(result == 1){
+			screenText = screenText + "\n" + "Oh no! You lost :'-(";
+		pooterWinCount++; 
+		}
 		//if the results is -1 - player wins
 
-
-
-		screenText = screenText + "\n" + "Pick Again Sucka!";
+		if(result == -1){
+			screenText = screenText + "\n" + "YAY!!! YOU WIN!!!";
+playerWinCount++; 
+		}
+		screenText = screenText + "\n" + "Play Again HOMIE!\n\n Player Wins: "+ playerWinCount+ "\nPooter Wins: "+ pooterWinCount;
 
 		//set the text to the screen using setText( String txt )
 		text.setText(screenText);
+		pooter.randomSetChoice();
   }
 
 	public static void main( String args[] )

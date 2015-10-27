@@ -15,6 +15,7 @@ public class ComputerRunner
 		System.out.println(c);								//outs pooter random choice
 		
 		//call randomChoice
+		c.randomSetChoice();
 		System.out.println(c);								//outs pooter random choice
 		
 		//this code will test didIWin( Player p )
