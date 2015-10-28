@@ -12,9 +12,9 @@ public class TranslatorRunner extends JFrame implements ActionListener {
 		private JTextArea text;
 
 		//these are the buttons that can be clicked
-		private JButton rock;
-		private JButton paper;
-		private JButton scissors;
+		private JButton kumusta;
+		private JButton kaibigan;
+		private JButton mahal;
 
 		public TranslatorRunner()
 		{
@@ -39,24 +39,24 @@ public class TranslatorRunner extends JFrame implements ActionListener {
 			text.setText("--Tagalog to Engish Translator--");
 
 			//instantiate a new JButton and refer rock to it
-			rock = new JButton("Rock");
-			rock.addActionListener(this);
-			rock.setActionCommand("rock");
+			kumusta = new JButton("Kumsta Ka?");
+			kumusta.addActionListener(this);
+			kumusta.setActionCommand("Kumusta Ka?");
 
 			//instantiate a new JButton and refer paper to it
-			paper = new JButton("Paper");
-			paper.addActionListener(this);
-			paper.setActionCommand("paper");
+			kaibigan = new JButton("Kaibigan");
+			kaibigan.addActionListener(this);
+			kaibigan.setActionCommand("Kaibigan");
 
 			//instantiate a new JButton and refer scissors to it
-			scissors = new JButton("Scissors");
-			scissors.addActionListener(this);
-			scissors.setActionCommand("scissors");
+mahal  = new JButton("Mahal");
+			mahal.addActionListener(this);
+			mahal.setActionCommand("Mahal");
 
 			//add all three buttons to the bottom panel
-			bot.add(rock);
-			bot.add(paper);
-			bot.add(scissors);
+			bot.add(kumusta);
+			bot.add(kaibigan);
+			bot.add(mahal);
 
 
 			//add the text to the top panel
@@ -79,15 +79,22 @@ public class TranslatorRunner extends JFrame implements ActionListener {
 	  {
 
 			//set screenText to the toString() value of each player reference
-			String screenText = "Pooter: " + "\n";
+			String screenText = "";
+					if(e.getActionCommand().equals("Kumusta Ka?"))
+						screenText= "Kumusta Ka? means 'How are you?' in Tagalog!";
+			if(e.getActionCommand().equals("Kaibigan"))
+				screenText= "Kaibigan means 'Friend' in Tagalog!";
+			if(e.getActionCommand().equals("Mahal"))
+				screenText= "Mahal means 'Love' in Tagalog!";
 
 			//set the text to the screen using setText( String txt )
+			screenText=screenText + "\n Pick Another Word!";
 			text.setText(screenText);
 	  }
 
 		public static void main( String args[] )
 		{
-			RockPaperScissorsRunner run = new RockPaperScissorsRunner();
+			TranslatorRunner run = new TranslatorRunner();
 		}
 
 }
