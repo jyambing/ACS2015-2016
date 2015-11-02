@@ -49,7 +49,7 @@ public class TranslatorRunner extends JFrame implements ActionListener {
 			kaibigan.setActionCommand("Kaibigan");
 
 			//instantiate a new JButton and refer scissors to it
-mahal  = new JButton("Mahal");
+			mahal  = new JButton("Mahal");
 			mahal.addActionListener(this);
 			mahal.setActionCommand("Mahal");
 
