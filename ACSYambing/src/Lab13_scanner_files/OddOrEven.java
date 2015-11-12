@@ -32,17 +32,16 @@ number=num;
 
 	public boolean isOdd( )
 	{
-		boolean result= true;
-
+boolean result= true;
 if(number %2==0)
- result = false;
+ result=false;
 		return result;
 	}
 
 	public String toString()
 	{
 String statement =number+" is even.\n\n";
- if(isOdd()==false){
+ if(isOdd()==true){
 	statement= number+ " is odd. \n\n";
 	}
  return statement;

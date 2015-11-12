@@ -11,22 +11,19 @@ import java.io.File;
 import java.util.Scanner;
 import static java.lang.System.*;
 
-public class Lab13a
+public class Lab13c
 {
 	public static void main( String args[] ) throws IOException
 	{
-		Scanner file = new Scanner(new File("data/lab13a.dat"));
-		int size = file.nextInt();
-		file.nextLine();
-		for(int i = 0; i < size; i++)
-		{
-		   int num = file.nextInt();
-		   OddOrEven data = new OddOrEven(num);
-		  data.setNum(num);
-		  System.out.println(data);
+		Scanner file = new Scanner(new File("lab13c.dat"));
 
 
 
-		}
+
+
+
+
+
+
 	}
 }
