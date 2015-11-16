@@ -36,17 +36,16 @@ socialNum=soc;
 	{
 int total=0;
 Scanner chop= new Scanner(socialNum);
-
-
-
-
-
-
-		return 0;
+chop.useDelimiter("-");
+while(chop.hasNext()){
+int num= chop.nextInt();
+total+=num;
+}
+		return total;
 	}
 
 	public String toString()
 	{
-		return "";
+		return "SS# " +socialNum+ " has a sum of "+ getSum();
 	}
 }
