@@ -33,7 +33,7 @@ package Tri1Project;
 		}
 		return p;		
 	}
-	public String classical(){
+	public String instrumental(){
 		String p= "YES! Classical!";
 		try{ 
 			File file = new File("data/gameThrones.wav");
