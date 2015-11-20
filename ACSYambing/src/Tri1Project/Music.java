@@ -10,14 +10,15 @@ package Tri1Project;
 	import javax.sound.sampled.DataLine;
 
 	public class Music {
+		File file;
+		AudioInputStream stream;
+		AudioFormat format;
+		DataLine.Info info;
+		Clip clip;
 	public String pop(){
 		String p= " YES! Pop!";
 		try{ 
-			File file = new File("data/wmyb.wav");
-			AudioInputStream stream;
-			AudioFormat format;
-			DataLine.Info info;
-			Clip clip;
+			file = new File("data/wmyb.wav");
 			
 			stream= AudioSystem.getAudioInputStream(file);
 			format= stream.getFormat();
@@ -29,18 +30,14 @@ package Tri1Project;
 			System.out.println(e);
 		}
 		finally{
-			//System.out.println("goodbye"0;
+			//System.out.println("goodbye");
 		}
 		return p;		
 	}
 	public String instrumental(){
 		String p= "YES! Classical!";
 		try{ 
-			File file = new File("data/gameThrones.wav");
-			AudioInputStream stream;
-			AudioFormat format;
-			DataLine.Info info;
-			Clip clip;
+			file = new File("data/gameThrones.wav");
 			
 			stream= AudioSystem.getAudioInputStream(file);
 			format= stream.getFormat();
@@ -59,11 +56,7 @@ package Tri1Project;
 	public String rap(){
 		String p= "YES! Rap!";
 		try{ 
-			File file = new File("data/sya.wav");
-			AudioInputStream stream;
-			AudioFormat format;
-			DataLine.Info info;
-			Clip clip;
+			file = new File("data/sya.wav");
 			
 			stream= AudioSystem.getAudioInputStream(file);
 			format= stream.getFormat();
@@ -75,18 +68,14 @@ package Tri1Project;
 			System.out.println(e);
 		}
 		finally{
-			//System.out.println("goodbye"0;
+			//System.out.println("goodbye");
 		}
 		return p;		
 	}
 	public String country(){
 		String p= "Yes! Country!";
 		try{ 
-			File file = new File("data/dirt.wav");
-			AudioInputStream stream;
-			AudioFormat format;
-			DataLine.Info info;
-			Clip clip;
+			file = new File("data/dirt.wav");
 			
 			stream= AudioSystem.getAudioInputStream(file);
 			format= stream.getFormat();
@@ -98,18 +87,14 @@ package Tri1Project;
 			System.out.println(e);
 		}
 		finally{
-			//System.out.println("goodbye"0;
+			//System.out.println("goodbye");
 		}
 		return p;		
 	}
 	public String rock(){
 		String p= "Yes! Rock!";
 		try{ 
-			File file = new File("data/acdc.wav");
-			AudioInputStream stream;
-			AudioFormat format;
-			DataLine.Info info;
-			Clip clip;
+			file = new File("data/acdc.wav");
 			
 			stream= AudioSystem.getAudioInputStream(file);
 			format= stream.getFormat();
@@ -121,7 +106,7 @@ package Tri1Project;
 			System.out.println(e);
 		}
 		finally{
-			//System.out.println("goodbye"0;
+			//System.out.println("goodbye");
 		}
 		return p;		
 	}
@@ -129,12 +114,8 @@ package Tri1Project;
 	public String oldies(){
 		String p= "Yes! Oldies!";
 		try{ 
-			File file = new File("data/dsb.wav");
-			AudioInputStream stream;
-			AudioFormat format;
-			DataLine.Info info;
-			Clip clip;
-			
+			file = new File("data/dsb.wav");
+	
 			stream= AudioSystem.getAudioInputStream(file);
 			format= stream.getFormat();
 			info= new DataLine.Info(Clip.class, format);
@@ -145,8 +126,26 @@ package Tri1Project;
 			System.out.println(e);
 		}
 		finally{
-			//System.out.println("goodbye"0;
+			//System.out.println("goodbye");
 		}
 		return p;		
 	}
+	public String stop(){
+		String p= "stop";
+		try{
+			stream= AudioSystem.getAudioInputStream(file);
+			format= stream.getFormat();
+			info= new DataLine.Info(Clip.class, format);
+			clip = (Clip) AudioSystem.getLine(info);
+			clip.open(stream);	
+			clip.start();
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+		finally{
+			clip.close();
+		}
+		return p;
+		}			
 	}

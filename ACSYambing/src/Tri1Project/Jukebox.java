@@ -22,8 +22,10 @@ else if( statement.equals("country"))
 else if(statement.equals("rock"))
 { response= playMusic.rock();
 }
-else response= playMusic.oldies();
-
+else if(statement.equals("oldies")) 
+{	response= playMusic.oldies();
+}
+else response = playMusic.stop();
 return response;
 }
 

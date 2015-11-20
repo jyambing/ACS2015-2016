@@ -18,6 +18,7 @@ private JButton rap;
 private JButton country;
 private JButton rock;
 private JButton oldies; 
+private JButton stop;
 	public JukeboxRunner()
 	{
 		super("Jukebox Runner");
@@ -57,13 +58,17 @@ private JButton oldies;
 		oldies.addActionListener(this);
 		oldies.setActionCommand("oldies");
 		
+		stop = new JButton("Stop");
+		stop.addActionListener(this);
+		stop.setActionCommand("stop");
+		
 		bot.add(pop);
 		bot.add(instrumental);
 		bot.add(rap);
 		bot.add(country);
 		bot.add(rock);
 		bot.add(oldies);
-		
+		bot.add(stop);
 		top.add(text);
 		
 		main.add(top);
@@ -78,7 +83,7 @@ private JButton oldies;
 	public void actionPerformed(ActionEvent e){
 	Jukebox juke= new Jukebox();
 		String screenText= "";
-		screenText= juke.getResponse(e.getActionCommand());
+			screenText= juke.getResponse(e.getActionCommand());
 	}
 	public static void main( String args[])
 	{
