@@ -83,7 +83,7 @@ private JButton stop;
 	public void actionPerformed(ActionEvent e){
 	Jukebox juke= new Jukebox();
 		String screenText= "";
-			screenText= juke.getResponse(e.getActionCommand());
+		screenText= juke.getResponse(e.getActionCommand());
 	}
 	public static void main( String args[])
 	{

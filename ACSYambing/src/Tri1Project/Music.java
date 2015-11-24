@@ -132,20 +132,9 @@ package Tri1Project;
 	}
 	public String stop(){
 		String p= "stop";
-		try{
-			stream= AudioSystem.getAudioInputStream(file);
-			format= stream.getFormat();
-			info= new DataLine.Info(Clip.class, format);
-			clip = (Clip) AudioSystem.getLine(info);
-			clip.open(stream);	
-			clip.start();
-		}
-		catch(Exception e) {
-			System.out.println(e);
-		}
-		finally{
+		
+		clip.stop();
 			clip.close();
-		}
-		return p;
+			return p;
 		}			
 	}

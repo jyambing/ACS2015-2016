@@ -25,7 +25,7 @@ else if(statement.equals("rock"))
 else if(statement.equals("oldies")) 
 {	response= playMusic.oldies();
 }
-else response = playMusic.stop();
+else response= playMusic.stop();
 return response;
 }
 
