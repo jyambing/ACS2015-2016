@@ -9,12 +9,13 @@ package Tri1Project;
 	import javax.sound.sampled.Clip;
 	import javax.sound.sampled.DataLine;
 
-	public class Music {
-		File file;
-		AudioInputStream stream;
+	public class Music                      {
+	File file;
+	AudioInputStream stream;
 		AudioFormat format;
 		DataLine.Info info;
 		Clip clip;
+		
 	public String pop(){
 		String p= " YES! Pop!";
 		try{ 
@@ -132,9 +133,7 @@ package Tri1Project;
 	}
 	public String stop(){
 		String p= "stop";
-		
 		clip.stop();
-			clip.close();
 			return p;
 		}			
 	}
