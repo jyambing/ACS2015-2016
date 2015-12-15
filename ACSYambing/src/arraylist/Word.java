@@ -26,22 +26,22 @@ public class Word {
 
 	public int getNumVowels() {
 		int count = 0;
-		for(int i=0; i<word.length()-1; i++){
+		/*for(int i=0; i<word.length()-1; i++){
 			
 			if(vowels.indexOf(word.charAt(i)>-1))
 				count++;
 		
 		}
+		*/
 		
-		
-	/*	for (int x = 0; x < word.length() - 1; x++) {
+		for (int x = 0; x < word.length() - 1; x++) {
 			for (int j = 0; j < vowels.length() - 1; j++) {
 				if (word.substring(x, x + 1).equals(vowels.substring(j, j + 1)))
 					count++;
 			}
 			
 		
-		}*/
+		}
 
 		return count;
 	}
