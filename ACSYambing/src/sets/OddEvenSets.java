@@ -22,11 +22,19 @@ package sets;
 
 		public OddEvenSets(String line)
 		{
-			Integer[] nums = line.split();
-			for(int numero: nums)
-				if(numero%2==0)
-					evens.add(numero);
-				else odds.add(numero);
+			String[] words = line.split(" ");
+			Set<String> all= new TreeSet<String>(Arrays.asList(words));
+			odds = new TreeSet<Integer>();
+			evens = new TreeSet<Integer>();
+			
+			for(String x: words)
+			{
+				int y = Integer.parseInt(x);
+				if(y%2==0)
+					evens.add(y);
+				else
+					odds.add(y);
+			}
 		}
 
 		public String toString()
