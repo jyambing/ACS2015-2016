@@ -48,26 +48,56 @@ public class MathSet
 
 	public Set<Integer> intersection()
 	{
-		return null;
+		Set<Integer> all = new TreeSet<Integer>();
+		for( int x: one)
+		{
+			if(two.contains(x))
+				all.add(x);
+		}
+		return all;
 	}
 
 	public Set<Integer> differenceAMinusB()
 	{
-		return null;
-	}
+	Set<Integer> all = new TreeSet<Integer>();
+		for( int x: one)
+		{
+			if(!two.contains(x))
+				all.add(x);
+		}
+		return all;
+	}	
 
 	public Set<Integer> differenceBMinusA()
 	{
-		return null;
+		Set<Integer> all = new TreeSet<Integer>();
+		for( int x: two)
+		{
+			if(!one.contains(x))
+				all.add(x);
+		}
+		return all;
 	}
 	
 	public Set<Integer> symmetricDifference()
-	{		
-		return null;
+	{		Set<Integer> symDif= new TreeSet<Integer>();
+	for(int x: one)
+		{if(!two.contains(x))
+			symDif.add(x);
+		}
+	for(int x: two)
+	{if(!one.contains(x))
+		symDif.add(x);
+	}
+		return symDif;
 	}	
 	
 	public String toString()
 	{
-		return "Set one " + one + "\n" +	"Set two " + two +  "\n";
+		String first= ( "Set one " + one + "\n" +	"Set two " + two +  "\n");
+		String second= ("\n union - "+ union() + "\n intersection - "+ intersection());
+		String third= ("\n difference A-B - " + differenceAMinusB() + "\n difference B-A - "+ differenceBMinusA());
+		String fourth= ("\n symmetric difference - "+ symmetricDifference());
+		return first+ second+ third+ fourth+ "\n";
 	}
 }
