@@ -18,14 +18,14 @@ public class IteratorTest {
 	public IteratorTest(String line, String rem) {
 		String[] words = line.split(" ");
 
-		ArrayList<String> list = new ArrayList<String>(Arrays.asList(words));
+		list = new ArrayList<String>(Arrays.asList(words));
 		toRemove = rem;
 	}
 
 	public void setTest(String line, String rem) {
 		String[] words = line.split(" ");
 		toRemove = rem;
-		ArrayList<String> list = new ArrayList<String>(Arrays.asList(words));
+		list = new ArrayList<String>(Arrays.asList(words));
 	}
 
 	public void remove() {

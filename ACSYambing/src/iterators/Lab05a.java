@@ -19,6 +19,13 @@ public class Lab05a
 		one1.remove();
 		System.out.println(one1);
 		
+		IteratorTest two1= new IteratorTest("a b c d e f g h i j x x x x", "x");
+		two1.remove();
+		System.out.println(two1);
+		
+		IteratorTest three1= new IteratorTest("1 2 3 4 5 6 a b c a b c", "b");
+		one1.remove();
+		System.out.println(three1);
 		
 	/*	
 		//add test cases	
