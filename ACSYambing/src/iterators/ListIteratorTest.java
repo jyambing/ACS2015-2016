@@ -37,7 +37,7 @@ public class ListIteratorTest
 
 	public void replace()
 	{
-		ListIterator<String> it = (ListIterator<String>) list.iterator();
+		ListIterator<String> it = (ListIterator<String>) list.listIterator();
 		while (it.hasNext()) {
 			if (it.next().equals(toRemove)) {
 				it.set(replaceWith);
