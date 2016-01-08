@@ -18,7 +18,12 @@ public class Word implements Comparable<Word>
 	//add an instance variable and a constructor
 
 	public int compareTo (Word other){
-	return wordy.compareTo();
+	if(wordy.length()== other.wordy.length())
+		return wordy.compareTo(other.wordy);
+	if(wordy.length()> other.wordy.length())
+		return 1;
+	else 
+		return -1;
 	}
 	//add a compareTo
 
