@@ -37,8 +37,8 @@ public VowelWord(String word)
 			return 1;
 		if(this.numVowels()<other.numVowels())
 		return -1;
-		else
-			return 0;
+		else 
+			return this.wordy.compareTo(other.wordy);
 	}
 
 	public String toString()
