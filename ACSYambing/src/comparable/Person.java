@@ -26,21 +26,23 @@ public Person( int y, int m, int d, String n)
 public int compareTo( Person other )
 {
 	if(this.myYear>other.myYear)
-		return 1;
-	if(this.myYear<other.myYear)
 		return -1;
+	if(this.myYear<other.myYear)
+		return 1;
 	else if(this.myYear==other.myYear)
 		if(this.myMonth>other.myMonth)
-			return 1;
-		if(this.myMonth<other.myMonth)
 			return -1;
+		if(this.myMonth<other.myMonth)
+			return 1;
 		else if(this.myMonth==other.myMonth)
 			if(this.myDay>other.myDay)
-				return 1;
+				return -1;
 			if(this.myDay<other.myDay)
-				return-1;
+				return 1;
+			else if( this.myName.compareTo(other.myName) >0)
+				return -1;
 			else
-				return this.myName.compareTo(other.myName);
+				return 1;
 }
 
 public String toString( )

@@ -19,9 +19,11 @@ public class Lab06c
 	{
 		ArrayList<Person> words= new ArrayList<Person>();
 Scanner file = new Scanner(new File ("data/lab06c.dat"));
-while(file.hasNext())
+int size = file.nextInt();
+file.nextLine();
+for(int i = 0; i < size; i++)
 {
-	words.add(new Person (file.next()));
+	words.add(new Person (file.nextInt(), file.nextInt(), file.nextInt(), file.next()));
 }
 
 Collections.sort(words);
