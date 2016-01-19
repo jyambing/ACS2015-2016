@@ -17,31 +17,23 @@ public class SpanishToEnglish
 
 	public SpanishToEnglish()
 	{
-
-
-
+		pairs= new TreeMap<String,String>();
 	}
 
 	public void putEntry(String entry)
 	{
 		String[] list = entry.split(" ");
-
-
-
-
-
+		String key= list[0];
+		String val= list[1];
+		pairs.put(key, val);
 	}
 
 	public String translate(String sent)
 	{
 		Scanner chop = new Scanner(sent);
 		String output ="";
-
-
-
-
-
-
+		while(chop.hasNext())
+			output+=pairs.get(chop.next()+" ");
 		return output;
 	}
 
