@@ -15,23 +15,22 @@ public class Lab08a
 {
 	public static void main( String args[] ) throws IOException
 	{
-		Scanner file = new Scanner(new File("data/lab08a.dat"));
+		Scanner scan = new Scanner(new File("data/lab08a.dat"));
 
 		SpanishToEnglish test = new SpanishToEnglish();
-		int num= file.nextInt();
+		int num= scan.nextInt();
 		//read in pairs from the file and load the map
+		scan.nextLine();
 		for(int x=0; x<num; x++)
-			test.putEntry(file.nextLine());
+			test.putEntry(scan.nextLine());
 
 		out.println("\n====\tMAP CONTENTS\t====\n\n");
 
 		//print the map
 
 		out.println(test+"\n\n");
-
 		//read in the lines and convert them
-		while(file.hasNext())
-			String liney = file.nextLine();
-			out.println(test.translate(liney));
+		while(scan.hasNext())
+			System.out.println(test.translate(scan.nextLine()));
 	}
 }
