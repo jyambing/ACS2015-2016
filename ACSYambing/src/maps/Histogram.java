@@ -20,6 +20,7 @@ public class Histogram
 
 	public Histogram(String sent)
 	{
+		setSentence(sent);
 	}
 	
 	public void setSentence(String sent)
@@ -37,6 +38,7 @@ public class Histogram
 	{
 		String output="";
 		String allStars="";
+	
 		return output+"\n\n";
 	}
 }
