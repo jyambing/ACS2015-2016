@@ -38,7 +38,11 @@ public class Histogram
 	{
 		String output="";
 		String allStars="";
-	
-		return output+"\n\n";
+		output= "char    1---5----01---5\n\n";
+	for(String charName: histogram.keySet())
+		output+= charName + "\t";
+		for(int y=0; y<histogram.get(charName); y++)
+			allStars+="*";
+		return output+ "\n\n";
 	}
 }
