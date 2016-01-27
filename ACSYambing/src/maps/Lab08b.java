@@ -19,9 +19,10 @@ public class Lab08b
 		String test1= "a b c d e f g h i a c d e g h i h k";
 		Histogram test = new Histogram(test1);
 		//read in pairs from the file and load the map
+		//test.setSentence(test1);
 		out.println(test);
 		//print the map
-		String test2= "1 2 3 4 5 6 1 2 3 4 5 1 3 1 2 3 4";
+		/*String test2= "1 2 3 4 5 6 1 2 3 4 5 1 3 1 2 3 4";
 		Histogram t2= new Histogram(test2);
 		out.println(t2);
 		
@@ -31,7 +32,7 @@ public class Lab08b
 		
 		String test4= "4 T # @ ^ # # #";
 		Histogram t4= new Histogram(test4);
-		out.println(t4);
+		out.println(t4);*/
 		
 	}
 }
