@@ -59,7 +59,10 @@ public class PartList
 	}
 	
 	public String toString()
-	{
+	{for(Map.Entry<String, Integer> entry: testMap.entrySet()){
+		entry.getKey();
+		entry.getValue();
+	}
 		String output="";
 
 
