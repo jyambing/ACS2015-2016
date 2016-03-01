@@ -14,6 +14,7 @@ public class Part implements Comparable<Part>
 	public Part(String line) 
 	{
 		String[] list = line.split(" ");
+		rest="";
 
 		make= list[list.length-3];
 		model= list[list.length-2];
@@ -28,31 +29,18 @@ public class Part implements Comparable<Part>
 	//have to have compareTo if implements Comparable
 	public int compareTo( Part other )
 	{
-		if(this.make.compareTo(other.make)==0){
-			if(this.model.compareTo(other.model)==0){
-				if(this.year==(other.year)){
-					if(this.rest.compareTo(other.rest)>0){
-						return 1;
-					else return -1;}
-					
-				else if(this.year>(other.year))
-					return 1;
-				else return -1;
-				}
-				
-			else if(this.model.compareTo(other.model)>0)
-				return 1;
-			else return -1;
-			}
-			
-		else if(this.make.compareTo(other.make)>0)
+		if(this.make.compareTo(other.make)>0)
 			return 1;
-		else return -1;
-		
-		}
-
-
-
+		else if(this.make.compareTo(other.make)<0)
+			return -1;
+		if(this.model.compareTo(other.model)>0)
+			return 1;
+		else if(this.model.compareTo(other.model)<0)
+			return -1;
+		if(this.year > (other.year))
+			return 1;
+		else if(this.year< other.year)
+			return -1;
 		return 0;
 	}
 

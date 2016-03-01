@@ -15,7 +15,7 @@ public class Lab08d
 {
 	public static void main(String[] args)
 	{
-		PartList prog = new PartList("lab08d.dat");
+		PartList prog = new PartList("data/ lab08d.dat");
 		out.println(prog);
 	}
 }

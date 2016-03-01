@@ -28,17 +28,16 @@ public class PartList
 		this();
 		try
 		{
-			Scanner file = new Scanner(new File("lab08d.dat"));
+			Scanner file = new Scanner(new File("data/lab08d.dat"));
 			//add code here to read from the file 
 			//and add Parts to the map
-			while(scan.hasNext()){
-				Part p= new Part(scan.nextLine()){
+			while(file.hasNext()){
+				Part p= new Part(file.nextLine());
 					if(partsMap.get(p)==null){
 						partsMap.put(p, 0);
 					}
 					partsMap.put(p, partsMap.get(p)+1);
-						}
-
+				}
 		}
 		catch( IOException e )  //Most specific exceptions must be listed 1st
 		{
@@ -59,14 +58,11 @@ public class PartList
 	}
 	
 	public String toString()
-	{for(Map.Entry<String, Integer> entry: testMap.entrySet()){
-		entry.getKey();
-		entry.getValue();
-	}
+	{
 		String output="";
-
-
-
+		for(Part key: partsMap.keySet()){
+			output+= key+ " " + partsMap.get(key)+"\n";
+		}
 
 		return output;
 	}
