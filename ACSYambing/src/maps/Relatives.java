@@ -1,4 +1,4 @@
-/*package maps;
+package maps;
 
 //© A+ Computer Science  -  www.apluscompsci.com
 //Name -
@@ -20,13 +20,13 @@ public class Relatives
 	public Relatives()
 	{
 
-map= new TreeMap<String, Set<String>>();
+		map= new TreeMap<String, Set<String>>();
 
 	}
 
 	public void setPersonRelative(String line)
 	{
-		String[] personRelative = line.split(" ");
+		/*String[] personRelative = line.split(" ");
 		Set setty= new TreeSet<String>();
 for(int x=0; x< personRelative.length; x++)
 	if(map.get(personRelative[x])==null)
@@ -34,19 +34,26 @@ for(int x=0; x< personRelative.length; x++)
 		else
 			setty.add(personRelative[x+1]);
 			map.put(personRelative[x], setty);
-
-
-
-
-
-
-
+*/
+		String[] personRelative= line.split("");
+		String key= personRelative[0];
+		String value = personRelative[1];
+		
+		if(map.get(key)==null){
+			map.put(key, new TreeSet<String>());
+		}
+		map.get(key).add(value);
 	}
 
 
 	public String getRelatives(String person)
 	{
-		return map.get(person);
+		String rels="";
+			for(String s: map.keySet()){
+				if(s.equals(person))
+					rels+=map.get(person);
+			}
+		return rels;
 	}
 
 
@@ -60,4 +67,3 @@ for(String name: map.keySet()){
 		return output;
 	}
 }
-*/

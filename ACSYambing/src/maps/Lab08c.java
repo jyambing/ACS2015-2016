@@ -15,6 +15,17 @@ public class Lab08c
 {
 	public static void main( String args[] ) throws IOException
 	{
-		//add more test cases		
+		Relatives r= new Relatives();
+		Scanner scan= new Scanner(new File("data/labo0c.dat"));
+		int num= scan.nextInt();
+		scan.nextLine();
+		for(int i=0; i<num; i++)
+		{
+			r.setPersonRelative(scan.nextLine());
+		}
+		System.out.println(r);
+		
+		String s= scan.next();
+		System.out.println(s+ " is related to "+ r.getRelatives(s));
 	}
 }
