@@ -16,7 +16,7 @@ public class Lab08c
 	public static void main( String args[] ) throws IOException
 	{
 		Relatives r= new Relatives();
-		Scanner scan= new Scanner(new File("data/labo0c.dat"));
+		Scanner scan= new Scanner(new File("data/lab08c.dat"));
 		int num= scan.nextInt();
 		scan.nextLine();
 		for(int i=0; i<num; i++)
