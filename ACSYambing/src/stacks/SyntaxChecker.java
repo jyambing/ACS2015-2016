@@ -41,29 +41,52 @@ public class SyntaxChecker
 
 	public boolean checkExpression()
 	{
-		int brak1, brak2, ar1, ar2;
+		int brak1=0;
+		int	brak2=0;
+		int	ar1=0; 
+		int	ar2=0;
+		int	par1=0; 
+		int	par2=0;
+		int	car1=0; 
+		int	car2=0;
 		while(symbols.empty()!=true)
 		{
-		 if(symbols.peek().equals("{"){
+		 if(symbols.peek().equals("{"))
 		 brak1++;
-		 }
-		 else if(symbols.peek().equals("}"){
+		
+		 if(symbols.peek().equals("}"))
 				 brak2++;
-		 }
-		 else if(symbols.peek().equals("["){
+		 
+		 if(symbols.peek().equals("["))
 				 ar1++;
-		 }
-		 else if(symbols.peek().equals("]"){
+		 
+		 if(symbols.peek().equals("]"))
 				 ar2++;
-		 }
+		 
+		 if(symbols.peek().equals("("))
+			 par1++;
+	 
+		 if(symbols.peek().equals("("))
+			 par2++;
+		 
+		 if(symbols.peek().equals("<"))
+			 car1++;
+	 
+		 if(symbols.peek().equals(">"))
+			 car2++;
+		 
+		 symbols.pop();
 		}
+		int total1= brak1+ar1+par1+car1;
+		int total2= brak2+ar2+par2+car2;
 		
-		
-		return false;
+		if(total1!=total2)
+			return false;
+		else return true;
 	}
 	public String toString()
 	{
-		if(symbols.checkExpression())
+		if(checkExpression()==true)
 		{
 			return exp+ " "+ "is correct";
 		}
