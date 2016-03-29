@@ -80,17 +80,17 @@ public class SyntaxChecker
 		int total1= brak1+ar1+par1+car1;
 		int total2= brak2+ar2+par2+car2;
 		
-		if(total1!=total2)
-			return false;
-		else return true;
+		if(brak1==brak2&&ar1==ar2&&par1==par2&&car1==car2)
+			return true;
+		else return false;
 	}
 	public String toString()
 	{
-		if(checkExpression()==true)
+		if(checkExpression()==false)
 		{
-			return exp+ " "+ "is correct";
+			return exp+ " "+ "is incorrect";
 		}
-		else return exp+ " "+ "is incorrect";
+		else return exp+ " "+ "is correct";
 	}
 
 	//write a toString
