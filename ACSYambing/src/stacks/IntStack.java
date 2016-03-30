@@ -10,47 +10,47 @@ package stacks;
 //array of ints
 
 import java.util.ArrayList;
+import java.util.Stack;
 import static java.lang.System.*;
 
 public class IntStack
 {
-	//pick your storage for the stack
-	//you can use the an array or an ArrayList
-
-	//option 1
-	private int[] rayOfInts;
-	private int numInts;
 
 	//option 2
 	private ArrayList<Integer> listOfInts;
+	private String exp="";
 
 	public IntStack()
 	{
-
+		listOfInts= new ArrayList<Integer>();
 	}
 
 	public void push(int item)
 	{
-
+		listOfInts.add(item);
+		exp+=item;
 	}
 
 	public int pop()
 	{
-		return 0;
+		int rem= peek();
+		listOfInts.remove(listOfInts.size()-1);
+		return rem;
+		
 	}
 
 	public boolean isEmpty()
 	{
-		return false;
+		return listOfInts.isEmpty();
 	}
 
 	public int peek()
 	{
-		return 0;
+		return listOfInts.get(listOfInts.size()-1);
 	}
 
 	public String toString()
 	{
-		return "";
+		return "["+exp+"]";
 	}
 }

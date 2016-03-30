@@ -17,6 +17,8 @@ public class PostFix
 
 	public PostFix()
 	{
+		nums= new Stack<Double>();
+		ops= new Stack<Character>();
 		setExpression("");
 	}
 
@@ -42,21 +44,20 @@ public class PostFix
 
 	public double calc()
 	{
-		double output= nums.pop();
+		double answer= nums.pop();
 		for(Character x: ops)
 		{
 			if(x=='+')
-				output+=nums.pop();
+				answer+=nums.pop();
 			if(x=='-')
-				output-=nums.pop();
+				answer-=nums.pop();
 			if(x=='*')
-				output*=nums.pop();
+				answer*=nums.pop();
 			if(x=='/')
-				output/=nums.pop();
-			if(x=='%')
-				output%=nums.pop();
+				answer/=nums.pop();
+		
 		}
-		return output;
+		return answer;
 	}
 
 	public void solve()
@@ -65,7 +66,7 @@ public class PostFix
 
 	public String toString()
 	{
-		return "" +this.calc();
+		return expression+" = " +this.calc();
 	}
 	//add a toString
 }
