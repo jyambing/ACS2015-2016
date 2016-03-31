@@ -16,6 +16,7 @@ public class SyntaxChecker
 
 	public SyntaxChecker()
 	{
+		symbols= new Stack<Character>();
 		setExpression("");
 	}
 
@@ -31,6 +32,7 @@ public class SyntaxChecker
 		char[] stacky= new char[s.length()];
 		for(int x=0; x<s.length(); x++)
 		{
+			//if(s.charAt(x) =123||125||91||93||28||29||60||62)
 			stacky[x]=s.charAt(x);
 		}
 		for(char i: stacky)
@@ -77,12 +79,11 @@ public class SyntaxChecker
 		 
 		 symbols.pop();
 		}
-		int total1= brak1+ar1+par1+car1;
-		int total2= brak2+ar2+par2+car2;
 		
 		if(brak1==brak2&&ar1==ar2&&par1==par2&&car1==car2)
 			return true;
-		else return false;
+		else 
+			return false;
 	}
 	public String toString()
 	{

@@ -13,7 +13,7 @@ public class PostFix
 {
 	private Stack<Double> nums;
 	private Stack<Character> ops;
-	private String expression;
+	private String expression="";
 
 	public PostFix()
 	{
