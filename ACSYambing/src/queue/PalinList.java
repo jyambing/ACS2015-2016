@@ -15,15 +15,18 @@ import java.util.LinkedList;
 public class PalinList {
 	private Queue<String> queue;
 	private Stack<String> stack;
+	private Stack<String> stack1;
 
 	public PalinList() {
 		stack = new Stack<String>();
+		stack1 = new Stack<String>();
 		queue = new LinkedList<String>();
-		setList("");
+		//setList("");
 	}
 
 	public PalinList(String list) {
 		stack = new Stack<String>();
+		stack1 = new Stack<String>();
 		queue = new LinkedList<String>();
 		setList(list);
 	}
@@ -35,16 +38,17 @@ public class PalinList {
 		for (String i : stacky) {
 			stack.add(i);
 			queue.add(i);
+			stack1.add(i);
 
 		}
 	}
 
 	public boolean isPalin() {
-		while (stack.isEmpty() != false&&queue.isEmpty()!=false) {
-			
-			String p =stack.pop();
-			System.out.println(p);
-			String q=queue.poll();
+		while (!stack.isEmpty() && !queue.isEmpty()) {
+
+			String p = stack.pop();
+			//System.out.println(p);
+			String q = queue.poll();
 			if (!p.equals(q)) {
 				return false;
 			}
@@ -55,9 +59,9 @@ public class PalinList {
 
 	public String toString() {
 		if (isPalin() == true)
-			return stack + " is a palinlist";
+			return stack1 + " is a palinlist";
 		else
-			return stack + " is not a palinlist";
+			return stack1 + " is not a palinlist";
 
 	}
 
