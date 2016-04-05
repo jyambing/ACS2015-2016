@@ -1,5 +1,4 @@
 package queue;
-
 //© A+ Computer Science  -  www.apluscompsci.com
 //Name -
 //Date -
@@ -10,32 +9,21 @@ import java.util.Queue;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Scanner;
 import java.util.PriorityQueue;
 
-public class PQTester
+public class MonsterPQ
 {
-	private PriorityQueue<String> pQueue;
+	private Queue<Monster> pQueue;
 
-	public PQTester()
+	public MonsterPQ()
 	{
-		pQueue = new PriorityQueue<String>();
-		setPQ("");
+		pQueue= new PriorityQueue<Monster>();
 	}
 
-	public PQTester(String list)
+	public void add(Monster obj)
 	{
-		pQueue = new PriorityQueue<String>();
-		setPQ(list);
-	}
-
-	public void setPQ(String list)
-	{
-		pQueue.clear();
-		String[] stacky = list.split(" ");
-		for (String i : stacky) {
-			pQueue.add(i);
-		}
-	
+		pQueue.add(obj);
 	}
 	
 	public Object getMin()
@@ -43,19 +31,24 @@ public class PQTester
 		return pQueue.peek();
 	}
 	
+	public Object removeMin()
+	{
+		return pQueue.remove();
+	}
+	
 	public String getNaturalOrder()
 	{
-		
 		String output="";
 		while(pQueue.size()>0){
 			output+= pQueue.remove()+ " ";
 		}
 		return output;		
 	}
-
+	
 	public String toString()
 	{
-		return "toString() - " + pQueue +"\n getMin() - "+ getMin() + "\n getNaturalOrder() - "+ getNaturalOrder();
-		
-	}	
+		return " "+ pQueue;
+	}
+
+	//write a toString method
 }
