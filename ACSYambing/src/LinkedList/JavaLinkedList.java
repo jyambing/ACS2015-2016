@@ -54,8 +54,8 @@ public class JavaLinkedList
 		int largest=Integer.MIN_VALUE;
 		for(int x=0; x<list.size(); x++)
 		{
-			if(x>largest)
-				largest=x;
+			if(list.get(x)>largest)
+				largest=list.get(x);
 		}
 		return largest;
 	}
@@ -65,8 +65,8 @@ public class JavaLinkedList
 		int smallest = smallest=Integer.MAX_VALUE;
 		for(int x=0; x<list.size(); x++)
 		{
-			if(x<smallest)
-				smallest=x;
+			if(list.get(x)<smallest)
+				smallest=list.get(x);
 		}
 		return smallest;
 	}
