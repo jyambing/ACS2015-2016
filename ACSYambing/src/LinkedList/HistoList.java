@@ -20,7 +20,7 @@ public class HistoList {
 	// addLetter will bump up the count if let already exists
 	public void addLetter(char let) {
 		HistoNode current= front;
-		if(front.indexOf(let)==-1)
+		if(indexOf(let)==-1)
 			new HistoNode(let, 1, null);
 		else
 		front.setLetterCount(front.getLetterCount()+1);
