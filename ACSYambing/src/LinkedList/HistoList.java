@@ -21,9 +21,11 @@ public class HistoList {
 	public void addLetter(char let) {
 		HistoNode current= front;
 		if(indexOf(let)==-1)
-			new HistoNode(let, 1, null);
-		else
-		front.setLetterCount(front.getLetterCount()+1);
+			front = new HistoNode(let, 1, front);
+		else{
+			current = nodeAt(indexOf(let));
+			current.setLetterCount(current.getLetterCount()+1);
+		}
 	}
 
 	// returns the index pos of let in the list if let exists
@@ -53,6 +55,11 @@ private HistoNode nodeAt(int spot)
 // return a string will all values from list
 public String toString(){
 	String output="";
+	HistoNode current = front;
+	while(current!=null)	{
+	output = current.getLetter()+ "-"+current.getLetterCount()+"\n";
+	current= current.getNext();
+	}
 	return output;
 }
 }
