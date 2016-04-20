@@ -57,7 +57,7 @@ public String toString(){
 	String output="";
 	HistoNode current = front;
 	while(current!=null)	{
-	output = current.getLetter()+ "-"+current.getLetterCount()+"\n";
+	output += current.getLetter()+ "-"+current.getLetterCount()+"\t";
 	current= current.getNext();
 	}
 	return output;
