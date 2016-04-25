@@ -21,28 +21,19 @@ public class HashTable
 
 	public void add(Number obj)
 	{
-		System.out.println("add");
+		
 		int i = obj.hashCode();
-
-
-
-
-
+		System.out.println(i);
+		if(table[i].contains(obj))
+			System.out.println(table[i].add(obj));
 	}
 
 	public String toString()
 	{
 		String output="HASHTABLE\n";
-
-
-
-
-
-
-
-
-
-
+		for(int x=0; x< table.length; x++){
+			output+= "bucket "+ table[x];
+		}
 		return output;
 	}
 }
