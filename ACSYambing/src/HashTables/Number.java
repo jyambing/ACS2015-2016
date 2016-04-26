@@ -22,7 +22,7 @@ public class Number
 	
 	public boolean equals(Number obj)
 	{
-		return getValue() == obj.getValue();
+		return  obj.theValue==theValue;
 	} 
 	
 	public int hashCode()

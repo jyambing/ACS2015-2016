@@ -21,18 +21,14 @@ public static void main ( String[] args )
 			
 			//read from the file
 			Scanner scan= new Scanner(new File("data/lab16a.dat"));
-			int num= scan.nextInt();
-			scan.nextLine();
-			for(int i=0; i<num; i++)
+			
+			while( scan.hasNext())
 			{
-				hashy.add((Obj)i);
+				hashy.add(new Number(scan.nextInt()));;
 			}
 			System.out.println(hashy);
 			
 			//load stuff into the table
-			
-			
-			
 			
 			//print out the table
 		}

@@ -17,22 +17,24 @@ public class HashTable
 	public HashTable( )
 	{
 		table = new LinkedList[10];
+		for(int x=0; x<table.length; x++)
+		{
+			table[x]= new LinkedList();
+		}
 	}
 
 	public void add(Number obj)
 	{
-		
 		int i = obj.hashCode();
-		System.out.println(i);
-		if(table[i].contains(obj))
-			System.out.println(table[i].add(obj));
+		if(!(table[i].contains(obj)))
+			table[i].add(obj);
 	}
 
 	public String toString()
 	{
 		String output="HASHTABLE\n";
 		for(int x=0; x< table.length; x++){
-			output+= "bucket "+ table[x];
+			output+= "bucket "+ x + " " + table[x]+ "\n";
 		}
 		return output;
 	}
