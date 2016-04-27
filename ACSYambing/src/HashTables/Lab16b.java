@@ -17,14 +17,17 @@ public static void main ( String[] args ) throws Exception
 		try{
 			//make a new table
 			
+			HashTableB hashy = new HashTableB();
 			
+			//read from the file
+			Scanner scan= new Scanner(new File("data/lab16b.dat"));
+			scan.nextInt();
+			while(scan.hasNext())
+			{
+				hashy.add(new Word(scan.next()));;
+			}
+			System.out.println(hashy);
 			
-			//add Words to the table
-	
-	
-	
-			//print the table
-	
 	
 		}
 		catch(Exception e)
